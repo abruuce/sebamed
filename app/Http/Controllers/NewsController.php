@@ -5,10 +5,10 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Series;
-use App\Product;
+use App\News;
+use Illuminate\Support\Facades\DB;
 
-class SeriesController extends Controller {
+class NewsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +17,10 @@ class SeriesController extends Controller {
 	 */
 	public function index()
 	{
-		$series = Series::all();
 
-        return view('series', compact('series'));
+        //$news = News::latest('date')->simplePaginate(10);
+        $news = News::latest('date')->paginate(10);
+        return view('news', compact('news'));
 	}
 
 	/**
@@ -48,13 +49,10 @@ class SeriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($series_id)
+	public function show($id)
 	{
-        $products = Product::where('series_id', $series_id)
-                                ->orderBy('id', 'asc')
-                                ->get();
-
-        return view('seriesProducts', compact('products'));
+		$news = News::findOrFail($id);
+        return view('newsContent', compact('news'));
 	}
 
 	/**

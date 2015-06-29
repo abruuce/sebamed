@@ -5,10 +5,10 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Series;
+use App\Functionality;
 use App\Product;
 
-class SeriesController extends Controller {
+class FunctionalityController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +17,9 @@ class SeriesController extends Controller {
 	 */
 	public function index()
 	{
-		$series = Series::all();
+		$functionalities = Functionality::all();
 
-        return view('series', compact('series'));
+        return view('functionalities', compact('functionalities'));
 	}
 
 	/**
@@ -48,13 +48,14 @@ class SeriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($series_id)
+	public function show($functionality_id)
 	{
-        $products = Product::where('series_id', $series_id)
-                                ->orderBy('id', 'asc')
-                                ->get();
+        $title = Functionality::find($functionality_id)->pluck('name');
+		$products = Product::where('functionality_id', $functionality_id)
+                            ->orderBy('series_id', 'asc')
+                            ->get();
 
-        return view('seriesProducts', compact('products'));
+        return view('functionalityProducts', compact('products', 'title'));
 	}
 
 	/**
