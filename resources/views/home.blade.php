@@ -1,7 +1,13 @@
+
 @foreach($banners as $banner)
-    {{ $banner->image }}
+    <div>
+        {{ $banner->image }}
+        {{ $banner->url }}
+    </div>
 @endforeach
 
-@foreach($news as $anews)
-    {{ $anews->title }}
+@foreach($news as $item)
+    <div>
+        {{ $item->title }}
+    </div>
 @endforeach
