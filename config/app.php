@@ -104,7 +104,7 @@ return [
 	|
 	| The service providers listed here will be automatically loaded on the
 	| request to your application. Feel free to add your own services to
-	| this array to grant expanded functionality to your applications.
+	| this array to grant expanded functionalities to your applications.
 	|
 	*/
 
@@ -194,8 +194,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-        'Form' => 'Collective\Html\FormFacade',
-        'Html' => 'Collective\Html\HtmlFacade',
+        'Html'      => 'Collective\Html\HtmlFacade',
+        'Form'      => 'Collective\Html\FormFacade',
         'Flash'     => 'Laracasts\Flash\Flash',
 	],
 
