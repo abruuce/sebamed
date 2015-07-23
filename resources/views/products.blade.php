@@ -1,3 +1,5 @@
-@foreach($products as $product)
-    {{ $product->name }}
-@endforeach
+
+
+    @foreach($products as $product)
+        {{ $product->name }}
+    @endforeach
