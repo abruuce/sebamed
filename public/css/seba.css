@@ -3,6 +3,7 @@
 	position: static;
 	min-height: 10px;
 	text-align: left;
+	margin-top: 10px;
 }
 .footer1 {
 	width: 896px;
@@ -52,10 +53,12 @@
 	text-decoration: none;
 }
 /* Main marketing message and sign up button */
+/* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 /* 最新消息navbar-brand */
 .navbar-brand{
 	float:left;
@@ -76,6 +79,7 @@
 /* navbar 導覽列 */
 @media (min-width:768px){
 	.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{
+navbar-brand
 		margin-left:-15px;
     }
 }
@@ -161,7 +165,6 @@
 .navbar-default .btn-link[disabled]:focus,.navbar-default .btn-link[disabled]:hover,fieldset[disabled] .navbar-default .btn-link:focus,fieldset[disabled] .navbar-default .btn-link:hover{
 	color:#ccc;
 }
-
 .navbar-collapse{
 	padding-right:15px;
 	padding-left:15px;
@@ -218,25 +221,38 @@
 		background-color: #3C7646
 	}
 }
-
-/* Wrapper for slides 
-.carousel-inner>
-.item>a>img,
-.carousel-inner>
-.item>img,
-.img-responsive,
-.thumbnail a>img,
-.thumbnail>img{
-	display:block;
-	max-width:100%;
-	height:auto
+/*end*/
+/*copy from bootstrap.min.css*/
+.container{
+	padding-right:0px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto
+}
+@media (min-width:768px){
+	.container{
+		width:100%
+	}
+}
+@media (min-width:992px){
+	.container{
+		width:100%
+	}
+}
+@media (min-width:1200px){
+	.container{
+		width:100%
+	}
+}
+.container-fluid{
+	padding-right:15px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto
+}
+.row{
+	margin-right:0px;
+	margin-left:0px
 }
 
-.jumbotron{
-	padding-top:30px;
-	padding-bottom:30px;
-	margin-bottom:30px;
-	color:inherit;
-	background-color:#eee
-}
-*/
+
