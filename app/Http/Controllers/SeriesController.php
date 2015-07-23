@@ -50,11 +50,12 @@ class SeriesController extends Controller {
 	 */
 	public function show($series_id)
 	{
+		$series = Series::find($series_id);
         $products = Product::where('series_id', $series_id)
                                 ->orderBy('id', 'asc')
                                 ->get();
 
-        return view('seriesProducts', compact('products'));
+        return view('seriesProducts', compact('products', 'series'));
 	}
 
 	/**

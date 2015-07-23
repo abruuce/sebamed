@@ -6,7 +6,8 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
     <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
     <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
     <li data-target="#carousel-example-generic" data-slide-to="4" ></li>
@@ -22,7 +23,7 @@
          	<a href=" {{ $banner->url }}"><img src="{{ asset('images/banners/'.$banner->image) }}" width="100%"></a>
           
          </div>
-       @endforeach  
+    @endforeach  
   </div>
 
   <!-- Controls -->
@@ -39,34 +40,33 @@
 <br/>
 <br/>
 
-<div class="row">
-    <div class="col-md-4 col-xs-12">
+  <div class="container"> 
+    <div class="row">
+     <div class="col-md-4 col-xs-12">
       <img src="http://www.sebamed.com.tw//images/index_35.jpg" width="85" height="18" align="left">
-       <a href="http://www.sebamed.com.tw/index.php/home/news/">
+       <a href="{{ action('NewsController@index')}}">
         <img src="http://www.sebamed.com.tw//images/more.jpg" width="47" height="18" border="0" ></a>
-      <div id="newslist">
-  
-       <ul>
-       	@foreach($news as $item)
-    	 <li>
-    	 	<a href "{{ action('NewsController@show', $item->id) }}">
-    	 	
-          {{ $item->date }}
-          {{ $item->title }}</a>
-         </li>
-        @endforeach
-        
-       </ul>
+         <!--20150720 try newslist-->
+            <table class="table table-striped">
+              <tbody>
+                @foreach($news as $item)
+                  <tr>
+                    <td><a href="{{ action('NewsController@show', [$item->id]) }}">{{ $item->date }} {{ $item->title }}</a></td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
      </div>
-     </div>
+     <!-- body img -->
        <div class="col-md-4 col-xs-6">
-          <a href="http://www.onedroponly.com.tw/">
-          <img src="http://www.sebamed.com.tw//images/pic1.jpg" width="280" height="196" border="0" /></a>
+          <a href="http://www.onedroponly.com.tw/" >
+          <img src="http://www.sebamed.com.tw//images/pic1.jpg" width="280" height="196" border="0" class="img-responsive"/></a>
        </div>
        <div class="col-md-4 col-xs-6">
-          <a href="http://www.sebamed.com.tw/index.php/home/news_in/83">
-          <img src="http://www.sebamed.com.tw//images/2015wallpaperBanner.jpg" width="280" height="196" border="0" /></a>
+          <a href="http://www.sebamed.com.tw/index.php/home/news_in/83" >
+          <img src="http://www.sebamed.com.tw//images/2015wallpaperBanner.jpg" width="280" height="196" border="0" class="img-responsive"/></a>
        </div>
-</div>
+    </div> 
+  </div>
 
 @stop
