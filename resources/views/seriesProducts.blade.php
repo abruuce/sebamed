@@ -1,7 +1,7 @@
 @extends('seba')
 
 @section('content')
- 
+{{ $series->series_banner }}
   <div class="container">
     <div class="row">
      <div class="col-md-9 col-md-offset-1 col-xs-12" >
