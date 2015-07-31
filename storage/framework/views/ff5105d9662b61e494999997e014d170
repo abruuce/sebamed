@@ -4,11 +4,11 @@
 		<title>施巴官網</title>
     
 		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="{{ asset('js/jquery.min.js')}}"></script>
-      <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-      <link href="{{ asset('/css/bootstrap-theme.min.css') }}" rel="stylesheet">
-      <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-      <link href="{{ asset('/css/seba.css') }}" rel="stylesheet">
+      <script src="<?php echo e(asset('js/jquery.min.js')); ?>"></script>
+      <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+      <link href="<?php echo e(asset('/css/bootstrap-theme.min.css')); ?>" rel="stylesheet">
+      <link href="<?php echo e(asset('/css/bootstrap.min.css')); ?>" rel="stylesheet">
+      <link href="<?php echo e(asset('/css/seba.css')); ?>" rel="stylesheet">
   </head>
  
 	<body>
@@ -16,7 +16,7 @@
   <!-- header -->
     <div class="row">
       <div class="col-md-6" >
-        <a href="{{ action('HomeController@index')}}"><img src="http://www.sebamed.com.tw//images/logo.jpg"  width="125" height="85" border="0" align="left"/></a>        
+        <a href="<?php echo e(action('HomeController@index')); ?>"><img src="http://www.sebamed.com.tw//images/logo.jpg"  width="125" height="85" border="0" align="left"/></a>        
       </div>  
       <div class="col-md-6" align="right">
         <a href="http://www.sebamed.de"><img src="http://www.sebamed.com.tw//images/toplk1.jpg" name="Image17" width="33" height="40" border="0" id="Image17" width="33" /></a>
@@ -38,7 +38,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-      <a class="navbar-brand" href="{{ action('NewsController@index')}}">最新消息</a>
+      <a class="navbar-brand" href="<?php echo e(action('NewsController@index')); ?>">最新消息</a>
      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling //aria-haspopup="true"// -->
@@ -48,8 +48,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">產品櫥窗 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{{ action('SeriesController@index')}}">依系列區分</a></li>
-            <li><a href="{{ action('FunctionalityController@index')}}">依功能區分</a></li>
+            <li><a href="<?php echo e(action('SeriesController@index')); ?>">依系列區分</a></li>
+            <li><a href="<?php echo e(action('FunctionalityController@index')); ?>">依功能區分</a></li>
           </ul>
         </li>
       
@@ -90,19 +90,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <li><a href="https://store.sebamed.com.tw/">官方購物</a></li>
-          <li><a href="{{ action('HomeController@index')}}">回首頁</a></li>
+          <li><a href="<?php echo e(action('HomeController@index')); ?>">回首頁</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse //-->
    </div><!-- /.container-fluid -->
   </nav>
 
-@yield('content')
+<?php echo $__env->yieldContent('content'); ?>
 		
 <div class="row">
   <div id="footer">
     <div class="footer2">
-      <img src="{{ asset('images\index_49.jpg') }}">   
+      <img src="<?php echo e(asset('images\index_49.jpg')); ?>">   
         Copyright © 2011 Sebamed.com.,Ltd.All Rights Reserved.
    
        <br>進口商：利百美興業股份有限公司　　 地址：807高雄市九如二路366號11F之1　　 客服電話： 0800-000-755 　　肌膚諮詢專線： 0800-755-755  
@@ -110,7 +110,7 @@
   </div>
  </div>
   
-		@yield('footer')
+		<?php echo $__env->yieldContent('footer'); ?>
 
 </div>
 	</body>
