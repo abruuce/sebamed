@@ -1,16 +1,28 @@
 @extends('seba')
 
 @section('content')
-{{ $series->series_banner }}
-  <div class="container">
-    <div class="row">
+  <div class="row">
      <div class="col-md-9 col-md-offset-1 col-xs-12" >
-     	<p><img src="{{ asset('images\news\title3.jpg') }}"></p>
+      <div class="list" id="pag_list"> 
+        <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 產品櫥窗 &gt; <a href="{{ action('SeriesController@index')}}">依系列區分</a>&gt;  產品
+        <p>
+      </div>
+   </div>   
+  </div>
+<!--{{ $series->series_banner }} -->
+   <div class="row">
+   	 <div class="col-md-8 col-md-offset-1 col-xs-12" >
+       <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+       <img src="{{ asset('images/series/' .$series->series_banner) }}" class="img-responsive" width="100%">
+     	
           @foreach($products as $key => $product)
+           <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center">
             <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">
-              <img src="{{ asset('images/products/small/'.$product->image1) }}"  >
-            </a>
-              <a class="btn btn-default" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
+             <img src="{{ asset('images/products/small/'.$product->image1) }}" ></a>
+            <br> 
+            <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
+           </div>
+              
 	        <!-- Modal -->
 	        <div class="modal fade" id="myModal_<?=$key;?>" role="dialog">
 	        <div class="modal-dialog">
@@ -21,13 +33,19 @@
 	        <h4 class="modal-title">產品櫥窗</h4>
 	        </div>
 	        <div class="modal-body">
-	          <!-- <a href="{{ action('ProductController@show', [$product->id]) }}"></a>-->
-	          <img src="{{ asset('images/products/big/'.$product->image2 ) }}" >
-	          <p>{{ $product->name }}</p>
-	          <p>{{ $product->name_en }}</p>
-	          <p>{!! $product->description !!}</p>
-	          <a>規格:{{ $product->specification }}</a>
-	          <p>價格:{{ $product->price }}</p>
+	         <div class="row">
+	          <div class="col-md-6 col-xs-12" style="text-align:center">
+	           <img src="{{ asset('images/products/big/'.$product->image2 ) }}" >
+	          </div>
+	          <div class="col-md-6 col-xs-12" >
+	          	  <p>{{ $product->name }}</p>
+		          <p>{{ $product->name_en }}</p>
+		          <p>{!! $product->description !!}</p>
+		          <p>規格:{{ $product->specification }}</p>
+		          <p>價格:{{ $product->price }}</p>
+		      </div>
+		     </div>
+
 	        </div>
 
 	         <div class="modal-footer">  
@@ -38,8 +56,8 @@
 	        </div>
 
           @endforeach
-      </div>
-    </div>
+     </div>
+   
   </div>
 
 @stop

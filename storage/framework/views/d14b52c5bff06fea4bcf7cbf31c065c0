@@ -1,0 +1,25 @@
+<?php $__env->startSection('content'); ?>
+  <div class="row">
+     <div class="col-md-9 col-md-offset-1 col-xs-12" >
+      <div class="list" id="pag_list"> 
+        <a href="<?php echo e(action('HomeController@index')); ?>">首頁</a> &gt; <a href="<?php echo e(action('SeriesController@index')); ?>">產品櫥窗</a>&gt; 依系列區分
+        <p>
+      </div>
+   </div>   
+  </div>
+
+   <div class="row">
+     <div class="col-md-9 col-md-offset-1 col-xs-12" >
+      <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
+     	<p><img src="<?php echo e(asset('images\news\title3.jpg')); ?>" class="img-responsive" ></p>
+       <?php foreach($series as $item): ?>
+         <a href="<?php echo e(action('SeriesController@show', [$item->id])); ?>">
+            <img src="<?php echo e(asset('images/series/'.$item->image)); ?>" >
+         </a>
+       <?php endforeach; ?>
+     </div>
+    </div>
+  
+  
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('seba', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

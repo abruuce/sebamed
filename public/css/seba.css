@@ -6,13 +6,14 @@
 	margin-top: 10px;
 }
 .footer1 {
-	width: 896px;
 	text-align: left;
 	margin: auto;
 	padding-top: 18px;
 	padding-bottom: 8px;
 } 
 .footer2 {
+	padding-top: 18px;
+	padding-bottom: 8px;
 	margin: auto;
 	text-align: left;
 	font-size: 12px;
