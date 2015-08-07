@@ -1,0 +1,44 @@
+<?php $__env->startSection('content'); ?>
+ <div class="row">
+   <div class="col-md-9 col-md-offset-1 col-xs-12" >
+    <div class="list" id="pag_list"> 
+     <a href="<?php echo e(action('HomeController@index')); ?>">首頁</a> &gt; <a href="<?php echo e(action('NewsController@index')); ?>">最新消息</a>
+     <p>
+    </div>
+   </div>
+ </div>
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1 col-xs-12" >
+      <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
+      <img src="<?php echo e(asset('images\news\title_4.jpg')); ?>" >
+        <div class="row">
+          <div class="col-md-12 col-xs-12" >
+            <table class="table table-striped">
+              <tbody>
+                
+                <!--  <td width="700" height="400" valign="top" background-image="<?php echo e(asset('images\news\bg1_ph55.jpg')); ?>"> -->
+                <?php foreach($news as $item): ?>
+                  <tr>
+                    <td><a href="<?php echo e(action('NewsController@show', [$item->id])); ?>"><?php echo e($item->date); ?> <?php echo e($item->title); ?></a></td>
+                  </tr>
+                <?php endforeach; ?>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+          <div class="col-md-12 col-md-offset-1 col-xs-12">
+            <nav>
+              <?php echo $news->render(); ?>
+
+            </nav> 
+          </div>       
+    </div>  
+  </div>
+ </div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('seba', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

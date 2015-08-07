@@ -1,0 +1,23 @@
+<?php $__env->startSection('content'); ?>
+ <div class="row">
+     <div class="col-md-9 col-md-offset-1 col-xs-12" >
+      <div class="list" id="pag_list"> 
+        <a href="<?php echo e(action('HomeController@index')); ?>">首頁</a> &gt; <a href="<?php echo e(action('FunctionalityController@index')); ?>">產品櫥窗</a>&gt; 依功能區分
+        <p>
+      </div>
+   </div>   
+  </div>
+  
+    <div class="row">
+     <div class="col-md-9 col-md-offset-1 col-xs-12" >
+     	<img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
+     	<p><img src="<?php echo e(asset('images\news\title3.jpg')); ?>" class="img-responsive"></p>  
+		  <?php foreach($functionalities as $functionality): ?>
+		    <a href="<?php echo e(action('FunctionalityController@show', [$functionality->id])); ?>">
+		    <img src="<?php echo e(asset('images/functionalities/'.$functionality->image1)); ?>" >
+		    </a>
+		  <?php endforeach; ?>
+	 </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('seba', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

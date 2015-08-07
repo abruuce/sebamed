@@ -34,7 +34,12 @@ Route::get('products/{id}', 'ProductController@show');
 Route::get('functionalities', 'FunctionalityController@index');
 Route::get('functionalities/{functionality_id}', 'FunctionalityController@show');
 
-
+//Brand page
+Route::get('brand', 'BrandController@index');
+Route::get('brand/doctor', 'BrandController@doctor');
+Route::get('brand/skincare', 'BrandController@skincare');
+Route::get('brand/award', 'BrandController@award');
+Route::get('brand/agent', 'BrandController@agent');
 
 //Route::resource('contacts', 'ContactController');
 /*

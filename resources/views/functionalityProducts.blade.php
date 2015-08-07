@@ -1,14 +1,20 @@
 @extends('seba')
 
 @section('content')
-
- <div class="row">
-  <div class="container">
+  <div class="row">
+     <div class="col-md-9 col-md-offset-1 col-xs-12" >
+      <div class="list" id="pag_list"> 
+        <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 產品櫥窗 &gt; <a href="{{ action('FunctionalityController@index')}}">依功能區分</a>&gt;  產品
+        <p>
+      </div>
+   </div>   
+  </div>
+  <div class="row">
     <div class="col-md-8 col-md-offset-1 col-xs-12">
 <!-- <div id="contectright"> -->
-      <img src="http://www.sebamed.com.tw//images/product_series_4.jpg" class="img-responsive">
-      <img src="http://www.sebamed.com.tw//images/ss1_3.jpg" class="img-responsive">
-<!--   <img src="http://www.sebamed.com.tw//images/bg1.jpg" width="718" height="40" align="center">-->
+      <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
+      <img src="{{ asset('images\title1.jpg') }}" class="img-responsive hidden-xs">
+<!--   <img src="http://www.sebamed.com.tw//images/bg.jpg" width="718" height="40" align="center" title1>-->
     
 <!--{{ $title }}
 
@@ -20,8 +26,9 @@
  @endforeach
 
     -->
-     
-      <!-- Trigger the modal with a button -->
+ 
+  
+       <!-- Trigger the modal with a button -->
       @foreach($products as $key => $product)
         <!--
          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_<?=$key;?>">
@@ -29,9 +36,12 @@
          {!! $product->name !!}
          </button>
         -->
-        <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">
-        <img src="{{ asset('images/products/small/'.$product->image1) }}" >
-        <a class="btn btn-default" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
+        <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center" >
+         <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">
+         <img src="{{ asset('images/products/small/'.$product->image1) }}" align="center" ></a>
+         <br>
+         <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
+        </div>
     
 
         <!-- Modal -->
@@ -44,28 +54,18 @@
         <h4 class="modal-title">{{ $title }} </h4>
         </div>
         <div class="modal-body">
-          <!-- <a href="{{ action('ProductController@show', [$product->id]) }}"></a>-->
-         <table class="table">
-          <tbody> 
-           <tr>
-            <td>
+          <div class="row">
+            <div class="col-md-6 col-xs-12" style="text-align:center" >
              <img src="{{ asset('images/products/big/'.$product->image2 ) }}" >
-              <td>
-               <table>
-                <tbody>
-                 <tr> <p>{{ $product->name }}</p>
-                      <p>{{ $product->name_en }}</p>
-                      <p>{!! $product->description !!}</p>
-                      <a>規格:{{ $product->specification }}</a>
-                      <p>價格:{{ $product->price }}</p>
-                 </tr>
-                </tbody>
-               </table>
-              </td>
-             </td>
-            </tr>
-           </tbody>
-          </table>
+            </div>
+            <div class="col-md-6 col-xs-12" >
+               <p>{{ $product->name }}</p>
+               <p>{{ $product->name_en }}</p>
+               <p>{!! $product->description !!}</p>
+               <p>規格:{{ $product->specification }}</p>
+               <p>價格:{{ $product->price }}</p>
+            </div>
+          </div>
          </div>
 
          <div class="modal-footer">  
@@ -78,7 +78,6 @@
      </div>
 
   </div>  
-</div>  
 
 @stop
 

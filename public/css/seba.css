@@ -6,13 +6,14 @@
 	margin-top: 10px;
 }
 .footer1 {
-	width: 896px;
 	text-align: left;
 	margin: auto;
 	padding-top: 18px;
 	padding-bottom: 8px;
 } 
 .footer2 {
+	padding-top: 18px;
+	padding-bottom: 8px;
 	margin: auto;
 	text-align: left;
 	font-size: 12px;
@@ -51,6 +52,73 @@
 #newslist li a:hover {
 	color: #3C7646;
 	text-decoration: none;
+}
+#pag_list {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	padding-left: 8px;
+}
+.list{
+	font-size: 11px;
+	color: #3C7646;
+	text-decoration: none;
+	font-weight: bold;
+}
+.list a:link{
+	font-size: 11px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+.list A:visited{
+	font-size: 11px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+.list A:hover{
+	font-size: 11px;
+	color: #3C7646;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+.list A:active{
+	font-size: 11px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: lighter;
+}
+/*news list*/
+.table-striped>tbody>tr a{
+	width: 100%;
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/*brand page*/
+.newstext {
+	font-size: 13px;
+	color: #333333;
+	text-decoration: none;
+	line-height: 24px;
+	clear: both;
+}
+/**/
+.newstextq {
+	font-size: 13px;
+	color: #333333;
+	text-decoration: none;
+	line-height: 24px;
+	clear: both;
+	font-weight: bold;
 }
 /* Main marketing message and sign up button */
 /* Main marketing message and sign up button */
