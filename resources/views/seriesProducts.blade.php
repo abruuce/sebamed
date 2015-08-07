@@ -4,7 +4,7 @@
   <div class="row">
      <div class="col-md-9 col-md-offset-1 col-xs-12" >
       <div class="list" id="pag_list"> 
-        <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 產品櫥窗 &gt; <a href="{{ action('SeriesController@index')}}">依系列區分</a>&gt;  產品
+        <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 產品櫥窗 &gt; <a href="{{ action('SeriesController@index')}}">依系列區分</a> &gt;  產品
         <p>
       </div>
    </div>   
@@ -13,7 +13,7 @@
    <div class="row">
    	 <div class="col-md-8 col-md-offset-1 col-xs-12" >
        <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
-       <img src="{{ asset('images/series/' .$series->series_banner) }}" class="img-responsive" width="100%">
+       <img src="{{ asset('images/series/' .$series->series_banner) }}" class="img-responsive hidden-xs" width="100%">
      	
           @foreach($products as $key => $product)
            <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center">
