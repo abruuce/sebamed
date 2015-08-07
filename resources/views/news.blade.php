@@ -4,7 +4,7 @@
  <div class="row">
    <div class="col-md-9 col-md-offset-1 col-xs-12" >
     <div class="list" id="pag_list"> 
-     <a href="{{ action('HomeController@index')}}">首頁</a> &gt; <a href="{{ action('NewsController@index')}}">最新消息</a>
+     <a href="{{ action('HomeController@index')}}">首頁</a> &gt; 最新消息
      <p>
     </div>
    </div>
@@ -13,11 +13,11 @@
  <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-1 col-xs-12" >
-      <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
-      <img src="{{ asset('images\news\title_4.jpg') }}" >
+      <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive hidden-xs">
+      <img src="{{ asset('images\news\title_4.jpg') }}" class="img-responsive hidden-xs">
         <div class="row">
           <div class="col-md-12 col-xs-12" >
-            <table class="table table-striped">
+            <table class="table table-striped" >
               <tbody>
                 
                 <!--  <td width="700" height="400" valign="top" background-image="{{ asset('images\news\bg1_ph55.jpg') }}"> -->

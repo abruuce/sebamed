@@ -13,7 +13,7 @@
     <div class="col-md-8 col-md-offset-1 col-xs-12">
 <!-- <div id="contectright"> -->
       <img src="{{ asset('images\product_line.jpg') }}" class="img-responsive">
-      <img src="{{ asset('images\title1.jpg') }}" class="img-responsive">
+      <img src="{{ asset('images\title1.jpg') }}" class="img-responsive hidden-xs">
 <!--   <img src="http://www.sebamed.com.tw//images/bg.jpg" width="718" height="40" align="center" title1>-->
     
 <!--{{ $title }}
