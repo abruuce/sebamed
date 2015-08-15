@@ -80,9 +80,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">購買地點 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://store.sebamed.com.tw/">官方購物</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/wherebuy/2">網路商店</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/wherebuy/3">百貨櫃點</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/wherebuy/4">連鎖藥妝</a></li>
+            <li><a href="{{ action('WhereBuyController@show', ['onlineshop']) }}">網路商店</a></li>
+            <li><a href="{{ action('WhereBuyController@show', ['deptstore']) }}">百貨櫃點</a></li>
+            <li><a href="{{ action('WhereBuyController@show', ['drugstore']) }}">連鎖藥妝</a></li>
           </ul>
         </li>
         <li class="dropdown">
