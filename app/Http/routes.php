@@ -41,6 +41,12 @@ Route::get('brand/skincare', 'BrandController@skincare');
 Route::get('brand/award', 'BrandController@award');
 Route::get('brand/agent', 'BrandController@agent');
 
+//Wherebuy page
+Route::get('wherebuy', 'WhereBuyController@index');
+Route::get('wherebuy/{type}', 'WhereBuyController@show');
+
+
+
 //Route::resource('contacts', 'ContactController');
 /*
 Route::get('contacts/create', 'ContactController@create');
