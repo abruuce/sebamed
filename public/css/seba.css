@@ -323,4 +323,31 @@ navbar-brand
 	margin-left:0px
 }
 
+.title {
+    color: green;
+    font-size: 15px;
+    font-weight: bold;    
+}
+
+.div-img {
+    text-align: right;
+}
+.circle-with-arror {
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+    margin-left: 5px;    
+    background: #82B29C;
+    color: #fff;
+    text-align: center;
+    font-size:8px;
+}
+.circle {
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background: green;
+    margin-left: 10px;
+    margin-right: 4px;
+}
 

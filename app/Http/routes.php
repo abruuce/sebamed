@@ -45,7 +45,14 @@ Route::get('brand/agent', 'BrandController@agent');
 Route::get('wherebuy', 'WhereBuyController@index');
 Route::get('wherebuy/{type}', 'WhereBuyController@show');
 
+//ask page
+Route::get('ask', function() {
+			return view('askqa');
+		});
 
+//video page
+// Route::get('video', 'videoController@show');
+Route::get('video', 'VideoController@show');
 
 //Route::resource('contacts', 'ContactController');
 /*
