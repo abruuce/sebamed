@@ -49,7 +49,7 @@
     <!-- Collect the nav links, forms, and other content for toggling //aria-haspopup="true"// -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="http://www.sebamed.com.tw/index.php/home/video">影音專區</a></li>
+        <li><a href="{{ action('VideoController@show')}}">影音專區</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">產品櫥窗 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -72,7 +72,7 @@
           <a href="#" class="dropdown-toggle hidden-sm" data-toggle="dropdown" role="button" aria-expanded="false">諮詢服務 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://store.sebamed.com.tw/products_list_mix.php?style_id=1&kind_id=16">索取樣品</a></li>
-            <li><a href="http://www.sebamed.com.tw/index.php/home/ask">產品問答</a></li>
+            <li><a href="{{ url('ask')}}">產品問答</a></li>
             <li><a href="http://www.sebamed.com.tw/index.php/home/ask/2">聯絡我們</a></li>
           </ul>
         </li>
