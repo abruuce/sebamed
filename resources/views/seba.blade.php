@@ -51,7 +51,6 @@
        <div class="col-md-12 hidden-xs">
         <a class="navbar-brand" href="{{ action('NewsController@index')}}">最新消息</a>
        </div>
-      <!-- <a class="navbar-brand" href="{{ action('NewsController@index')}}">最新消息</a> -->
      </div>
 
     <!-- Collect the nav links, forms, and other content for toggling //aria-haspopup="true"// -->
@@ -94,16 +93,31 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">相關討論 <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle hidden-sm" data-toggle="dropdown" role="button" aria-expanded="false">相關討論 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://www.facebook.com/sebamedtw">官方粉絲團</a></li>
           </ul>
-        </li> 
+        </li>
         <li><a href="{{ action('VideoController@show')}}">影音專區</a></li>
-      </ul>      
-      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <li><a href="https://store.sebamed.com.tw/">官方購物</a></li>
+          <a href="#" class="dropdown-toggle hidden-md hidden-xs hidden-lg" data-toggle="dropdown" role="button" aria-expanded="false">更多... <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ action('BrandController@index')}}">品牌故事</a></li>
+            <li><a href="{{ action('BrandController@doctor')}}">海茲默爾醫師</a></li>
+            <li><a href="{{ action('BrandController@skincare')}}">醫學皮膚護理</a></li>
+            <li><a href="{{ action('BrandController@award')}}">得獎事蹟</a></li>
+            <li><a href="{{ action('BrandController@agent')}}">總代理商</a></li>
+            <li><a href="https://store.sebamed.com.tw/products_list_mix.php?style_id=1&kind_id=16">索取樣品</a></li>
+            <li><a href="{{ url('ask')}}">產品問答</a></li>
+            <li><a href="http://www.sebamed.com.tw/index.php/home/ask/2">聯絡我們</a></li>
+            <li><a href="https://www.facebook.com/sebamedtw">官方粉絲團</a></li>
+          </ul>
+        </li>  
+      </ul>      
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://store.sebamed.com.tw/">官方購物</a></li>
+        <li class="dropdown">
           <li><a href="{{ action('HomeController@index')}}">回首頁</a></li>
         </li>
       </ul>
