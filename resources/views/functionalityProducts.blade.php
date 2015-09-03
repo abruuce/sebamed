@@ -16,26 +16,13 @@
       <img src="{{ asset('images\title1.jpg') }}" class="img-responsive hidden-xs">
 <!--   <img src="http://www.sebamed.com.tw//images/bg.jpg" width="718" height="40" align="center" title1>-->
     
-<!--{{ $title }}
-
- @foreach($products as $product)
-    <a href="{{ action('ProductController@show', [$product->id]) }}">
-        <img src="{{ asset('images/products/small/'.$product->image1) }}">
-    </a>
-    {!! $product->name !!}
- @endforeach
-
-    -->
- 
   
-       <!-- Trigger the modal with a button -->
+      <!-- Trigger the modal with a button -->
+      <?php
+         $num1 = 0;
+         $num2 = 0;
+      ?>
       @foreach($products as $key => $product)
-        <!--
-         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_<?=$key;?>">
-         <img src="{{ asset('images/products/small/'.$product->image1) }}">
-         {!! $product->name !!}
-         </button>
-        -->
         <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center" >
          <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">
          <img src="{{ asset('images/products/small/'.$product->image1) }}" align="center" ></a>
@@ -44,8 +31,24 @@
           <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">{!! $product->name !!}</a>
          </div>
         </div>
-    
 
+        <?php
+          $num1 = $num1 + 1  ;         
+          $num2 = $num2 + 1   ;        
+          if($num1==2){
+            $num1 = 0 ;
+        ?>
+            <div class="clearfix visible-xs-block visible-sm-block"></div>
+        <?php 
+            }
+          if($num2==3){
+            $num2 = 0 ;
+        ?>  
+            <div class="clearfix visible-md-block visible-lg-block"></div>
+        <?php 
+            }
+        ?>
+    
         <!-- Modal -->
         <div class="modal fade" id="myModal_<?=$key;?>" role="dialog">
         <div class="modal-dialog">

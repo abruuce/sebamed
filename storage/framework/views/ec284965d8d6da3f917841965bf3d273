@@ -11,40 +11,42 @@
     <div class="col-md-8 col-md-offset-1 col-xs-12">
 <!-- <div id="contectright"> -->
       <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
-      <img src="<?php echo e(asset('images\title1.jpg')); ?>" class="img-responsive">
+      <img src="<?php echo e(asset('images\title1.jpg')); ?>" class="img-responsive hidden-xs">
 <!--   <img src="http://www.sebamed.com.tw//images/bg.jpg" width="718" height="40" align="center" title1>-->
     
-<!--<?php echo e($title); ?>
-
-
- <?php foreach($products as $product): ?>
-    <a href="<?php echo e(action('ProductController@show', [$product->id])); ?>">
-        <img src="<?php echo e(asset('images/products/small/'.$product->image1)); ?>">
-    </a>
-    <?php echo $product->name; ?>
-
- <?php endforeach; ?>
-
-    -->
- 
   
-       <!-- Trigger the modal with a button -->
+      <!-- Trigger the modal with a button -->
+      <?php
+         $num1 = 0;
+         $num2 = 0;
+      ?>
       <?php foreach($products as $key => $product): ?>
-        <!--
-         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_<?=$key;?>">
-         <img src="<?php echo e(asset('images/products/small/'.$product->image1)); ?>">
-         <?php echo $product->name; ?>
-
-         </button>
-        -->
         <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center" >
          <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>">
          <img src="<?php echo e(asset('images/products/small/'.$product->image1)); ?>" align="center" ></a>
          <br>
-         <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
+         <div class="pdtx">
+          <a href="" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
+         </div>
         </div>
-    
 
+        <?php
+          $num1 = $num1 + 1  ;         
+          $num2 = $num2 + 1   ;        
+          if($num1==2){
+            $num1 = 0 ;
+        ?>
+            <div class="clearfix visible-xs-block visible-sm-block"></div>
+        <?php 
+            }
+          if($num2==3){
+            $num2 = 0 ;
+        ?>  
+            <div class="clearfix visible-md-block visible-lg-block"></div>
+        <?php 
+            }
+        ?>
+    
         <!-- Modal -->
         <div class="modal fade" id="myModal_<?=$key;?>" role="dialog">
         <div class="modal-dialog">
@@ -52,7 +54,7 @@
         <div class="modal-content">
         <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><?php echo e($title); ?> </h4>
+        <h4 class="modal-title">產品櫥窗</h4>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -60,7 +62,7 @@
              <img src="<?php echo e(asset('images/products/big/'.$product->image2 )); ?>" >
             </div>
             <div class="col-md-6 col-xs-12" >
-               <p><?php echo e($product->name); ?></p>
+               <div class="t3"><p><?php echo e($product->name); ?></p></div>
                <p><?php echo e($product->name_en); ?></p>
                <p><?php echo $product->description; ?></p>
                <p>規格:<?php echo e($product->specification); ?></p>
@@ -81,14 +83,4 @@
   </div>  
 
 <?php $__env->stopSection(); ?>
-
-<!--
-<?php foreach($products as $product): ?>
-    <a href="<?php echo e(action('ProductController@show', [$product->id])); ?>">
-        <img src="<?php echo e(asset('images/products/small/'.$product->image1)); ?>">
-    </a>
-    <?php echo $product->name; ?>
-
-<?php endforeach; ?>
--->
 <?php echo $__env->make('seba', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
