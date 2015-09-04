@@ -12,7 +12,11 @@
    	 <div class="col-md-8 col-md-offset-1 col-xs-12" >
        <img src="<?php echo e(asset('images\product_line.jpg')); ?>" class="img-responsive">
        <img src="<?php echo e(asset('images/series/' .$series->series_banner)); ?>" class="img-responsive hidden-xs" width="100%">
-     	
+
+          <?php
+   	       $num1 = 0;
+ 	       $num2 = 0;
+ 	      ?>
           <?php foreach($products as $key => $product): ?>
            <div class="col-md-4 col-sm-6 col-xs-6" style="text-align:center">
             <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>">
@@ -22,7 +26,23 @@
              <a href="#" data-toggle="modal" data-target="#myModal_<?=$key;?>"><?php echo $product->name; ?></a>
             </div> 
            </div>
-              
+           <?php
+			$num1 = $num1 + 1  ;         
+			$num2 = $num2 + 1   ;        
+			if($num1==2){
+				$num1 = 0 ;
+			?>
+				<div class="clearfix visible-xs-block visible-sm-block"></div>
+			<?php	
+  			}
+			if($num2==3){
+				$num2 = 0 ;
+			?>	
+				<div class="clearfix visible-md-block visible-lg-block"></div>
+			<?php	
+  			}
+            ?>
+
 	        <!-- Modal -->
 	        <div class="modal fade" id="myModal_<?=$key;?>" role="dialog">
 	        <div class="modal-dialog">

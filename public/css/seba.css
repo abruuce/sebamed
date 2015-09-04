@@ -458,4 +458,6 @@
 .carousel-control .icon-next:before{
 	content:'\203a'
 }
-
+.navbar-toggle{
+	background-color:#3C7646
+}	
