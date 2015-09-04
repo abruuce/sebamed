@@ -96,6 +96,7 @@
           <a href="#" class="dropdown-toggle hidden-sm" data-toggle="dropdown" role="button" aria-expanded="false">相關討論 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://www.facebook.com/sebamedtw">官方粉絲團</a></li>
+            <li><a href="http://www.facebook.com/babysebamedtw">嬰兒官方粉絲團</a></li>           
           </ul>
         </li>
         <li><a href="{{ action('VideoController@show')}}">影音專區</a></li>
